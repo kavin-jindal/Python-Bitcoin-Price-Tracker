@@ -1,7 +1,9 @@
 
 ![bit](https://user-images.githubusercontent.com/68228966/113101733-b34e7300-921a-11eb-95c6-b558bd9260d2.png)
 
-
+[![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/for-you.svg)](https://forthebadge.com)
 
 # Python-Bitcoin-Price-Tracker
 A program made in Python Tkinter to track Bitcoin Price. 
@@ -39,5 +41,7 @@ Report the issues here
 # Discord
 
 https://discord.gg/vdzJyj3gWa
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
 # Made with ❤️ by Kavin Jindal
