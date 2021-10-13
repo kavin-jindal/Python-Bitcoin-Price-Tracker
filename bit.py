@@ -5,7 +5,9 @@ from urllib import request
 from datetime import datetime
 import tkinter.ttk as ttk
 from PIL import ImageTk, Image
+import ssl
 
+ssl._create_default_https_context = ssl._create_unverified_context
 #import win32gui, win32con
 
 
@@ -20,6 +22,15 @@ now = datetime.now()
 current_time = now.strftime("%I:%M:%S %p")
 global previous
 previous = False
+
+my_notebook = ttk.Notebook(root)
+my_notebook.pack()
+
+
+frame2 = Frame(my_notebook, width=1000, height=1000, bg="white")
+
+frame2.pack(fill="both", expand=10)
+my_notebook.add(frame2, text="Home")
 
 '''
 logo = PhotoImage(file='K:/programming/bitcoin/bit.png')
@@ -40,7 +51,7 @@ def Update():
     bit_label.config(text=f'${price_large2}')
 
 
-    root.after(30000, Update)
+    frame2.after(30000, Update)
 
     now = datetime.now()
     current_time = now.strftime("%I:%M:%S %p")
@@ -70,10 +81,10 @@ def Update():
         previous = current
         lprice_label.config(text='+0.00', fg='grey')
         
-bit_emo = Label(root, text='₿', font=('Consolas', 100), fg='orange', bg='white')
-head = Label(root, text='Bitcoin Price', font=('Verdana', 50), bg='white')
-bit_label = Label(root, text='TEST', font=('Consolas', 36), bg='white')
-status_bar = Label(root, text=f'Last Updated {current_time}   ',
+bit_emo = Label(frame2, text='₿', font=('Consolas', 100), fg='orange', bg='white')
+head = Label(frame2, text='Bitcoin Price', font=('Verdana', 50), bg='white')
+bit_label = Label(frame2, text='TEST', font=('Consolas', 36), bg='white')
+status_bar = Label(frame2, text=f'Last Updated {current_time}   ',
 	bd=0,
 	anchor=E,
 	bg="black",
@@ -82,7 +93,7 @@ status_bar.pack(fill=X, side=TOP, ipady=2)
 bit_emo.pack()
 head.pack()
 bit_label.pack()
-lprice_label = Label(root, text='move test', font=('Consolas', 36), bg='white')
+lprice_label = Label(frame2, text='move test', font=('Consolas', 36), bg='white')
 lprice_label.pack()
 
 
