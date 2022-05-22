@@ -15,9 +15,9 @@ ssl._create_default_https_context = ssl._create_unverified_context
 #win32gui.ShowWindow(hide , win32con.SW_HIDE)
 root = Tk()
 root.configure(bg='white')
-root.title('Bitcoin Price')
-#root.resizable(False, False)
-root.geometry('1000x1000')
+root.title('Bitcoin Tracker by Kavin Jindal v1.3')
+root.resizable(False, False)
+root.geometry('420x420')
 now = datetime.now()
 current_time = now.strftime("%I:%M:%S %p")
 global previous
@@ -93,7 +93,7 @@ status_bar.pack(fill=X, side=TOP, ipady=2)
 bit_emo.pack()
 head.pack()
 bit_label.pack()
-lprice_label = Label(frame2, text='move test', font=('Consolas', 36), bg='white')
+lprice_label = Label(frame2, text='Developed by Kavin Jindal', font=('Consolas', 36), bg='white')
 lprice_label.pack()
 
 
