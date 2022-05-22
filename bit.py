@@ -6,7 +6,7 @@ from datetime import datetime
 import tkinter.ttk as ttk
 from PIL import ImageTk, Image
 import ssl
-
+import requests
 ssl._create_default_https_context = ssl._create_unverified_context
 #import win32gui, win32con
 
@@ -16,7 +16,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 root = Tk()
 root.configure(bg='white')
 root.title('Bitcoin Price')
-root.resizable(False, False)
+#root.resizable(False, False)
 root.geometry('1000x1000')
 now = datetime.now()
 current_time = now.strftime("%I:%M:%S %p")
@@ -39,14 +39,14 @@ logo_label.pack()'''
 def Update():
     global previous
 
-    page = urllib.request.urlopen('https://www.coindesk.com/price/bitcoin').read()
-    html = BeautifulSoup(page, 'html.parser')
-    price_large = html.find(class_ = 'price-large')
-    print(price_large)
+    page = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json' , verify = False)
+    data = page.json()
+    price_large2 = data["bpi"]["USD"]["rate"]    #price_large = html.find(class_ = 'price-large')
+    #print(price_large2)
 
-    price_large1 = str(price_large)
+    #price_large1 = str(price_large)
 
-    price_large2 = price_large1[54:63]
+    #price_large2 = price_large1[54:63]
 
     bit_label.config(text=f'${price_large2}')
 
